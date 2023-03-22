@@ -4,11 +4,12 @@
 import colors from "./fetch-API-data-&-colors.js"
 
 // set spotify API credentials
-const client_id = import.meta.env.VITE_REACT_API_CLIENT_ID; // Spotify Client_ID
-const client_secret = import.meta.env.VITE_REACT_API_CLIENT_SECRET; // Spotify Client_Secret
+// const client_id = import.meta.env.VITE_CLIENT_ID; // Spotify Client_ID
+// const client_secret = process.env.VITE_CLIENT_SECRET; // Spotify Client_Secret
+// console.log(client_id)
 
 // "retrieve ACCESS TOKEN" function
-async function getAccessToken() {
+async function getAccessToken(client_id, client_secret) {
     const testing = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
         headers: {

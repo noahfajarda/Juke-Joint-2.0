@@ -30,17 +30,22 @@ export default function Search({ setId, setType, type }) {
       console.log(trackData);
 
       // set the widget
-      setType(type);
+      setType(form.type);
       setId(trackData.trackId);
-    } else if (form.type === "artist") {
-      console.log("do the search artist function");
+    } else if (form.type === "album") {
+      const albumData = await retrieveData.fetchAlbumData(form.search);
+      console.log(albumData);
+
+      console.log(form.type);
+      setType(form.type);
+      setId(albumData.albumId);
     }
 
     // display the widget
     const widgetContainerEl = document.querySelector(".spotify-widget");
     widgetContainerEl.style.display = "block";
   };
-  const types = ["track", "artist", "album"];
+  const types = ["track", "album", "artist"];
 
   return (
     <form
