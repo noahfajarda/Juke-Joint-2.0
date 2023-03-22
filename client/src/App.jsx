@@ -8,7 +8,8 @@ import { QUERY_me } from "./utils/queries";
 // pages
 import ReactBoilerplate from "./pages/ReactBoilerplate";
 import LoginPage from "./pages/LoginPage";
-import MainSearchPage from "./pages/MainSearchPage";
+import Home from "./pages/Home";
+import Track from "./pages/Track";
 
 function App() {
   const { loading, error, data } = useQuery(QUERY_me);
@@ -23,7 +24,9 @@ function App() {
             {/* needs below */}
             {/* <Route path="/home" element={<HomePage user={data?.me} />} /> */}
             <Route path="/login" element={<LoginPage user={data?.me} />} />
-            <Route path="/main" element={<MainSearchPage />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/track" element={<Track user={data?.me} />} />
+            {/* boilerplate */}
             <Route path="/test" element={<ReactBoilerplate />} />
             <Route path="*" element={<Navigate to="/login" />} />
           </Routes>

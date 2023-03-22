@@ -19,7 +19,8 @@ export default function Search({ setId, setType, type }) {
     // get form info
     e.preventDefault();
     console.log(trackForm);
-    setTrackForm({ trackSearch: "" });
+    // maybe reset the track form
+    // setTrackForm({ trackSearch: "" });
 
     // filtered track data already
     // refer to function to view all data retrieved
