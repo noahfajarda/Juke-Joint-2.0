@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 
 // css
-import "../styles/Track.css";
+import "../styles/SearchPage.css";
 
 // spotify widget component
 import SpotifyWidget from "../components/Home/SpotifyWidget/SpotifyWidget";
 import Search from "../components/Home/Search/Search";
 
-export default function Track({ user }) {
+export default function SearchPage({ user }) {
   // see if you can get the user
   // console.log(user);
 

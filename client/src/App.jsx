@@ -9,7 +9,7 @@ import { QUERY_me } from "./utils/queries";
 import ReactBoilerplate from "./pages/ReactBoilerplate";
 import LoginPage from "./pages/LoginPage";
 import Home from "./pages/Home";
-import Track from "./pages/Track";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   const { loading, error, data } = useQuery(QUERY_me);
@@ -25,7 +25,7 @@ function App() {
             {/* <Route path="/home" element={<HomePage user={data?.me} />} /> */}
             <Route path="/login" element={<LoginPage user={data?.me} />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/track" element={<Track user={data?.me} />} />
+            <Route path="/track" element={<SearchPage user={data?.me} />} />
             {/* boilerplate */}
             <Route path="/test" element={<ReactBoilerplate />} />
             <Route path="*" element={<Navigate to="/login" />} />
