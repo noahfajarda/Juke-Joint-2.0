@@ -4,3 +4,7 @@ REFER TO THIS FOR FILTERING COMMENTS BY ID:
 await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec();
 
 // SEEDS DON'T WORK RIGHT NOW
+
+// TODO:
+
+1. Fix the signup mutations, not connecting with gql server
