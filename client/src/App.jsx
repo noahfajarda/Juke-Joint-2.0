@@ -11,7 +11,6 @@ import LoginPage from "./pages/LoginPage";
 import MainSearchPage from "./pages/MainSearchPage";
 
 function App() {
-  const [count, setCount] = useState(0);
   const { loading, error, data } = useQuery(QUERY_me);
 
   return (

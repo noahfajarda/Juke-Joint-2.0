@@ -8,7 +8,7 @@ import "../styles/mainSearchPage.css";
 import SpotifyWidget from "../components/MainSearchPage/SpotifyWidget/SpotifyWidget";
 import Search from "../components/MainSearchPage/Search/Search";
 
-export default function mainSearchPage({ user }) {
+export default function MainSearchPage({ user }) {
   // see if you can get the user
   // console.log(user);
 
