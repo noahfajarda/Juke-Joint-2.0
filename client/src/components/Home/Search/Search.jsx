@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from "react";
 
 // data retrieval
-import retrieveData from "../../../utils/dataRetrieval/fetchTrackData";
+import retrieveData from "../../../utils/dataRetrieval/fetchAPIData";
+
+async function getMusicData(form, setId, setType) {
+  if (form.type === "track") {
+    // filtered track data already
+    // refer to function to view all data retrieved
+    const trackData = await retrieveData.fetchTrackData(form.search);
+    // set the widget
+    setId(trackData.trackId);
+  } else if (form.type === "album") {
+    const albumData = await retrieveData.fetchAlbumData(form.search);
+    setId(albumData.albumId);
+  }
+
+  // set the type of search
+  setType(form.type);
+}
 
 export default function Search({ setId, setType, type }) {
   // set form state variables, change, submit
@@ -23,23 +39,8 @@ export default function Search({ setId, setType, type }) {
     // maybe reset the form
     // setForm({ search: "" });
 
-    if (form.type === "track") {
-      // filtered track data already
-      // refer to function to view all data retrieved
-      const trackData = await retrieveData.fetchTrackData(form.search);
-      console.log(trackData);
-
-      // set the widget
-      setType(form.type);
-      setId(trackData.trackId);
-    } else if (form.type === "album") {
-      const albumData = await retrieveData.fetchAlbumData(form.search);
-      console.log(albumData);
-
-      console.log(form.type);
-      setType(form.type);
-      setId(albumData.albumId);
-    }
+    // populate the data
+    await getMusicData(form, setId, setType);
 
     // display the widget
     const widgetContainerEl = document.querySelector(".spotify-widget");
