@@ -7,7 +7,7 @@ import "../styles/Home.css";
 export default function Home({ user }) {
   return (
     <div>
-      <Link to={`/track`}>Go to Search</Link>
+      <Link to={`/search`}>Go to Search</Link>
     </div>
   );
 }
