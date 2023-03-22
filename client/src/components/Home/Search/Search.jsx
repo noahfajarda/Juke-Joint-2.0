@@ -5,26 +5,26 @@ import fetchTrackData from "../../../utils/dataRetrieval/fetchTrackData";
 
 export default function Search({ setId, setType, type }) {
   // set form state variables, change, submit
-  const [trackForm, setTrackForm] = useState({
-    trackSearch: "",
+  const [form, setForm] = useState({
+    search: "",
   });
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setTrackForm({
-      ...trackForm,
+    setForm({
+      ...form,
       [name]: value,
     });
   };
   const handleSubmit = async (e) => {
     // get form info
     e.preventDefault();
-    console.log(trackForm);
-    // maybe reset the track form
-    // setTrackForm({ trackSearch: "" });
+    console.log(form);
+    // maybe reset the form
+    // setForm({ search: "" });
 
     // filtered track data already
     // refer to function to view all data retrieved
-    const trackData = await fetchTrackData(trackForm.trackSearch);
+    const trackData = await fetchTrackData(form.search);
     console.log(trackData);
 
     // set the widget
@@ -39,7 +39,7 @@ export default function Search({ setId, setType, type }) {
   return (
     <form
       name="new-post"
-      id="track-post"
+      id="search-post"
       onSubmit={(e) => {
         handleSubmit(e);
       }}
@@ -47,13 +47,13 @@ export default function Search({ setId, setType, type }) {
       <input
         className="search-bar"
         type="text"
-        id="trackSearch"
-        name="trackSearch"
-        value={trackForm.trackSearch}
+        id="search"
+        name="search"
+        value={form.search}
         onChange={handleChange}
       />
       <button type="submit" id="submit" className="submit">
-        Search Track
+        Search
       </button>
     </form>
   );

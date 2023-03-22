@@ -25,7 +25,7 @@ function App() {
             {/* <Route path="/home" element={<HomePage user={data?.me} />} /> */}
             <Route path="/login" element={<LoginPage user={data?.me} />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/track" element={<SearchPage user={data?.me} />} />
+            <Route path="/search" element={<SearchPage user={data?.me} />} />
             {/* boilerplate */}
             <Route path="/test" element={<ReactBoilerplate />} />
             <Route path="*" element={<Navigate to="/login" />} />
