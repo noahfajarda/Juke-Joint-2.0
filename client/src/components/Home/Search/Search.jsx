@@ -13,6 +13,9 @@ async function getMusicData(form, setId, setType) {
   } else if (form.type === "album") {
     const albumData = await retrieveData.fetchAlbumData(form.search);
     setId(albumData.albumId);
+  } else if (form.type === "artist") {
+    const artistData = await retrieveData.fetchArtistData(form.search);
+    setId(artistData.artistId);
   }
 
   // set the type of search

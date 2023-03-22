@@ -48,12 +48,35 @@ async function fetchAlbumData(album) {
 
   // isolate all the data you need for the DB
   const albumDBDataToInsert = {
+    albumId: data.id,
     albumName: data.name,
     albumArtist: data.artists[0].name,
-    albumId: data.id
   }
 
   return albumDBDataToInsert;
 }
 
-export default { fetchTrackData, fetchAlbumData }
+async function fetchArtistData(artist) {
+  // retrieve access token
+  const token = await access.getAccessToken(client_id, client_secret);
+
+  // hit API for track to retrieve data & filter
+  // pass in TOKEN & TRACK
+  const test = await dataRetrieval.search_for_artist(token, artist)
+  let data = await test.json();
+  data = data.artists.items[0];
+
+  // this is all API data retrieved
+  // console.log(data)
+
+
+  // isolate all the data you need for the DB
+  const artistDBDataToInsert = {
+    artistId: data.id,
+    artistName: data.name,
+  }
+
+  return artistDBDataToInsert;
+}
+
+export default { fetchTrackData, fetchAlbumData, fetchArtistData }
