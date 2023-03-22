@@ -1,8 +1,10 @@
-// do stuff here
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import Auth from "../../../utils/auth";
 import { ADD_USER } from "../../../utils/mutations";
+
+// css
+import "./Signup.css";
 
 export default function Signup() {
   const [formState, setFormState] = useState({
@@ -29,8 +31,14 @@ export default function Signup() {
 
     try {
       console.log(formState);
+
+      const { data } = await AddUser({
+        variables: formState,
+      });
+      console.log(data);
     } catch (e) {
       console.error("There was an error", e);
+      showError("There Was An Error Signing Up. Please Try Again.");
     }
   };
 
@@ -42,8 +50,21 @@ export default function Signup() {
       !formState.email ||
       !formState.password
     ) {
-      console.log("One Or More Fields Were Not Entered. Please Try Again.");
+      showError("One Or More Fields Were Not Entered. Please Try Again.");
     }
+  };
+
+  const showError = (text) => {
+    const errorEl = document.querySelector("#signup-error");
+    errorEl.textContent = text;
+    let secondsLeft = 2;
+    let timerInterval = setInterval(function () {
+      secondsLeft--;
+      if (secondsLeft === 0) {
+        clearInterval(timerInterval);
+        errorEl.textContent = "";
+      }
+    }, 1000);
   };
 
   return (
@@ -73,7 +94,7 @@ export default function Signup() {
         <i className="fas fa-user"></i>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Username (Unique)"
           name="username"
           value={formState.username}
           onChange={handleChange}
@@ -83,7 +104,7 @@ export default function Signup() {
         <i className="fas fa-envelope"></i>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Email (Unique)"
           name="email"
           value={formState.email}
           onChange={handleChange}
@@ -93,19 +114,9 @@ export default function Signup() {
         <i className="fas fa-lock"></i>
         <input
           type="password"
-          placeholder="Password (1 cap, 1 low, 1 num)"
+          placeholder="Password (1 up, 1 low, 1 num, 8-25 char)"
           name="password"
           value={formState.password}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="input-field">
-        <i className="fas fa-lock"></i>
-        <input
-          type="number"
-          placeholder="Budget"
-          name="budget"
-          value={formState.budget}
           onChange={handleChange}
         />
       </div>
