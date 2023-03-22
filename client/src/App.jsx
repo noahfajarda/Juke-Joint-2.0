@@ -7,7 +7,7 @@ import { QUERY_me } from "./utils/queries";
 
 // pages
 import ReactBoilerplate from "./pages/ReactBoilerplate";
-import LoginPage from "./pages/LoginPage";
+import LoginSignupPage from "./pages/LoginSignupPage";
 import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
 
@@ -23,7 +23,10 @@ function App() {
             {/* all other routes */}
             {/* needs below */}
             {/* <Route path="/home" element={<HomePage user={data?.me} />} /> */}
-            <Route path="/login" element={<LoginPage user={data?.me} />} />
+            <Route
+              path="/login"
+              element={<LoginSignupPage user={data?.me} />}
+            />
             <Route path="/home" element={<Home />} />
             <Route path="/search" element={<SearchPage user={data?.me} />} />
             {/* boilerplate */}
