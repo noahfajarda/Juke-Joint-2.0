@@ -65,9 +65,13 @@ const resolvers = {
       return await SearchedSong.create({ trackName, trackArtist, trackId, title, trackArt })
     },
     addUser: async (parent, { firstName, lastName, username, email, password }) => {
-      const user = await User.create({ firstName, lastName, username, email, password })
-      const token = signToken(user)
-      return { user, token }
+      try {
+        const user = await User.create({ firstName, lastName, username, email, password })
+        const token = signToken(user)
+        return { user, token }
+      } catch (error) {
+        console.log(error)
+      }
     },
     addComment: async (parent, { searchedItem, body, type }) => {
       return await Comment.create({ searchedItem, body, type })
