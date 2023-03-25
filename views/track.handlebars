@@ -1,0 +1,116 @@
+<link rel="stylesheet" href="/css/homepage.css" />
+<link rel="stylesheet" href="/css/track.css" />
+
+{{! All properties that can be accessed: }}
+{{! trackName, trackArtist, trackId, trackArt, title, userId, lyrics }}
+{{! comments }}
+{{! FOR EACH-------- id, searchedItem, body, type, postId, userId, "user.firstname", "user.lastname", "user.username", "user.password" }}
+
+{{>sidebar}}
+<section class="content-section" style="width:80%;">
+{{!-- big container --}}
+    <div class="d-flex justify-content-between info-container">
+        <div class="title-container">
+            <div style="position:relative; top: 45%; left: 30%;">
+                <div class="text-box">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary-main">Track</span>
+                        <span id="track-name" class="heading-primary-sub">{{trackName}}</span>
+                        <span id="track-artist" class="heading-primary-sub">{{trackArtist}}</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div style="width: 75%">
+            <iframe
+                style="border-radius: 5px"
+                src="https://open.spotify.com/embed/track/{{trackId}}?utm_source=generator"
+                width="100%"
+                height="380"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+            ></iframe>
+            <div class="d-flex flex-row justify-content-end">
+                <div class="placement">
+                    <div id="addToLikes" class="heart"></div>
+                </div>
+                <div class="placement d-flex align-items-center" style="padding: 0px 20px;">
+                    <div id="addToPlaylist" class="rela-block add-to-playlist"></div>
+                </div>
+            </div>
+        </div>
+        <div id="trackId" style="display: none">{{trackId}}</div>
+    </div>
+    <div id="lyric-comment-container">
+        {{! Lyrics }}
+        <div class="accordion accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                        id="lyrics-button"
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseOne"
+                    >
+                        Lyrics
+                    </button>
+                </h2>
+                <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                >
+                    <div class="accordion-body" id="lyrics">
+                        <div class="loader loader--style5" title="4">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                <rect x="0" y="0" width="4" height="10" fill="#333">
+                                <animateTransform attributeType="xml"
+                                    attributeName="transform" type="translate"
+                                    values="0 0; 0 20; 0 0"
+                                    begin="0" dur="0.6s" repeatCount="indefinite" />
+                                </rect>
+                                <rect x="10" y="0" width="4" height="10" fill="#333">
+                                <animateTransform attributeType="xml"
+                                    attributeName="transform" type="translate"
+                                    values="0 0; 0 20; 0 0"
+                                    begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+                                </rect>
+                                <rect x="20" y="0" width="4" height="10" fill="#333">
+                                <animateTransform attributeType="xml"
+                                    attributeName="transform" type="translate"
+                                    values="0 0; 0 20; 0 0"
+                                    begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+                                </rect>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="track-comment-section">
+            {{>comment-section}}
+        </div>
+    </div>
+
+</section>
+
+{{! test from genius lyrics api }}
+{{#if trackArt}}
+    <img src="{{trackArt}}" height="100px" width="100px" alt="test" style="display: none;" />
+    <div id="track-art" style="display: none">{{trackArt}}</div>
+{{else}}
+    No album art
+{{/if}}
+
+<script src="/js/back-to-home.js"></script>
+<script src="/js//comment/add-track-comment-page.js"></script>
+<script src="/js/track/render-lyrics.js"></script>
+<script src="/js/track/add-to-playlist.js"></script>
+<script src="/js/track/add-to-likes.js"></script>
