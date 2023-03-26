@@ -151,13 +151,23 @@
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border: 2px solid #cc6666;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.859);
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
   width: 100%;
   box-sizing: border-box;
   outline: 0;
+}
+
+#comment-box::placeholder{
+  color: rgba(236, 216, 251, 0.807);
+  font-weight: normal;
+}
+
+#comment-box {
+  color: rgb(199, 178, 232);
+  font-weight: bold;
 }
 
 .feedback-input:focus {
@@ -167,6 +177,11 @@
   cursor:none;
   margin:0px;
 }
+
+#lyrics {
+  background-color: rgba(152, 203, 231, 0.1);
+}
+
 #track-name {
   color:rgb(170, 179, 105)
 }
@@ -193,6 +208,21 @@ textarea {
   margin-top: -4px;
   font-weight: 700;
 }
+
+#add-track-comment,
+#add-artist-comment,
+#add-album-comment {
+  background-color:#c0b2ec;
+  letter-spacing: 0.1em;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+#add-track-comment:hover,
+#add-artist-comment:hover,
+#add-album-comment:hover  {
+  background-color:#615292;
+}
+
 [type="submit"]:hover {
   cursor: none;
   background: #3641dd;
