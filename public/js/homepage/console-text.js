@@ -91,7 +91,7 @@ consoleText(
     "dodgerblue",
     "lightsalmon",
     "lightblue",
-    "goldenrod",
+    "darkorchid",
     "tomato",
     "darkseagreen",
   ], "console", 80
@@ -186,7 +186,7 @@ consoleText(
   [
     "dodgerblue",
     "tomato",
-    "goldenrod",
+    "darkorchid",
     "lightblue",
     "lightsalmon",
     "darkseagreen",
