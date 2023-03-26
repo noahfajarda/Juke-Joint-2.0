@@ -35,6 +35,10 @@ router.get("/playlist/:id", async (req, res) => {
                 const filteredData = playlistData.map((playlist) =>
                     playlist.get({ plain: true })
                 );
+                console.log(filteredData.length)
+                if (filteredData.length == 0) {
+                    return res.render("playlist")
+                }
                 filteredData.reverse();
 
                 const filteredPlaylistData = {
