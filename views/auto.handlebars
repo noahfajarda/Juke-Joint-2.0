@@ -1,5 +1,8 @@
 {{>sidebar}}
 
+<div id="auto-complete-text">
+    Start Typing Your Favorite Artist & Let Our Autocomplete Bar Finish It Off For You!
+</div>
 <div id="auto-complete-container">
     <input type="text" id="search" />
     <div id="choices"></div>
@@ -12,12 +15,19 @@
 <script src="/js/search.js"></script>
 <link rel="stylesheet" href="/css/homepage.css">
 <style>
+    #auto-complete-text {
+        padding-top: 100px;
+        color: white;
+        font-size: 30px;
+        font-family: "Raleway", sans-serif;
+    }
     .twelve {
         height: 95px;
         padding-top: 0px;
     }
     #search {
         font-size: 69px;
+        font-family: "Raleway", sans-serif;
         height: 80px;
     }
     #choices {
@@ -36,9 +46,13 @@
         opacity: 0;
         animation: fadeUp 2s ease 0s 1 normal forwards;
     }
+    .auto-choice {
+        font-family: "Raleway", sans-serif;
+    }
     .auto-choice:hover {
         border-radius: 10px;
-        background-color: red;
+        background-color: white;
+        color: black;
     }
     @keyframes fadeUp {
         0% {
