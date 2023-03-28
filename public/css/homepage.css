@@ -491,6 +491,12 @@ main {
 }
 .side-button.contact::before {
   content: "Contact Us";
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 .side-button.contact:after {
   background: url("../images/contact-icon.png")
