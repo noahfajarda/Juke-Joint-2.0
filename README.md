@@ -42,7 +42,7 @@ The app functions off of Spotify API which allows user to search their music as 
 
 ## Link To Deployed Application
 
-Click [here](https://juke-joint.herokuapp.com/) to view our deployed application.
+Click [here](https://jukejoint.herokuapp.com/) to view our deployed application.
 
 ## Contributors
 
