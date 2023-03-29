@@ -353,7 +353,7 @@ button:hover {
   align-items: center;
   padding: 30px 5%;
   background: rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.558);
+  background-color: rgba(187, 83, 83, 0.558);
   box-shadow: 4px 0px 25px -1px rgb(0 0 0 / 50%);
   color: white;
   padding: 10px;
@@ -372,9 +372,9 @@ nav li {
   width: 100%;
 }
 .nav-item {
-  padding: 10px 15px; 
-  text-decoration: none; 
-  color: #333; 
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
   background-repeat: no-repeat;
   background-position: 5px center;
   background-size: 27px 27px;
@@ -382,21 +382,21 @@ nav li {
 }
 
 #viewHome2 {
-  background-image: url('../images/home-icon.png');
+  background-image: url("../images/home-icon.png");
 }
 
 #viewLikes2 {
-  background-image: url('../images/heart-icon.png');
+  background-image: url("../images/heart-icon.png");
 }
 
 #viewPlaylist2 {
-  background-image: url('../images/playlist-icon.png');
+  background-image: url("../images/playlist-icon.png");
 }
 #contact2 {
   background-image: url(../images/contact-icon.png);
 }
 #resize-logout-btn {
-  background-image: url('../images/logout-icon.png');
+  background-image: url("../images/logout-icon.png");
 }
 /* Add similar styles for other links */
 

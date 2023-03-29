@@ -392,9 +392,10 @@ main {
   cursor: none;
 }
 .member:hover {
-  background-color: black;
+  background-color: #be5a5a9d;
   border-radius: 10px;
   cursor: none;
+  transition: all 0.3s ease-out 0.5s;
 }
 .rela-block {
   display: block;
