@@ -14,13 +14,7 @@ body {
   margin: auto;
   overflow: auto;
   cursor: none;
-  background: linear-gradient(
-    315deg,
-    #3b0909a6 13%,
-    #394b47 38%,
-    #1b3c5f 68%,
-    #2c0606 98%
-  );
+  background: linear-gradient(315deg, #3f2909 0%, #472507 74%);
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
@@ -85,6 +79,8 @@ body {
   font-size: 1.3rem;
   font-weight: bold;
   line-height: 1.2;
+  font-family: "Raleway";
+  font-weight: 100;
 }
 
 .copy {
@@ -115,7 +111,6 @@ body {
 }
 
 @media (hover: hover) and (min-width: 600px) {
-
   .content {
     transform: translateY(calc(100% - 4.5rem));
   }
@@ -127,7 +122,7 @@ body {
 }
 
 main {
-  height:100%;
+  height: 100%;
 }
 
 .main {
@@ -317,14 +312,14 @@ button:hover {
   display: none;
 }
 .expand {
-  animation: cursorAnim3 .5s forwards;
+  animation: cursorAnim3 0.5s forwards;
 }
 @keyframes cursorAnim3 {
   0% {
-    transform: scale(1)
+    transform: scale(1);
   }
   50% {
-    transform: scale(6)
+    transform: scale(6);
   }
   100% {
     transform: scale(1);
@@ -357,8 +352,8 @@ button:hover {
   justify-content: center;
   align-items: center;
   padding: 30px 5%;
-  background: rgba(0,0,0,0.2);
-  background-color: rgba(255, 255, 255, 0.558);
+  background: rgba(0, 0, 0, 0.2);
+  background-color: rgba(187, 83, 83, 0.558);
   box-shadow: 4px 0px 25px -1px rgb(0 0 0 / 50%);
   color: white;
   padding: 10px;
@@ -377,10 +372,34 @@ nav li {
   width: 100%;
 }
 .nav-item {
-  color: black;
-  font-size: 3vw;
+  padding: 10px 15px;
   text-decoration: none;
+  color: #333;
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 27px 27px;
+  cursor: none;
 }
+
+#viewHome2 {
+  background-image: url("../images/home-icon.png");
+}
+
+#viewLikes2 {
+  background-image: url("../images/heart-icon.png");
+}
+
+#viewPlaylist2 {
+  background-image: url("../images/playlist-icon.png");
+}
+#contact2 {
+  background-image: url(../images/contact-icon.png);
+}
+#resize-logout-btn {
+  background-image: url("../images/logout-icon.png");
+}
+/* Add similar styles for other links */
+
 #nav-items {
   margin-bottom: 0px;
   display: flex;
@@ -388,15 +407,15 @@ nav li {
   padding: 0;
   color: black;
 }
-a,button {
+a,
+button {
   font-size: 16px;
   font-weight: 500;
-  color: #fff;
   text-decoration: none;
   cursor: none;
 }
 button {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   border: 2px solid #fd5e53;
   border-radius: 50px;
   padding: 9px 25px;
@@ -408,9 +427,52 @@ nav li a:hover {
 #main-title-text {
   color: white;
   transition: all 0.4s ease 0s;
+  font-size: 60px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Playfair Display" serif;
 }
 #main-title-text:hover {
   color: rgb(195, 195, 195);
+}
+.nine h1 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+.nine h1 span {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #ffffff;
+  word-spacing: 1px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.nine h1 span:after,
+.nine h1 span:before {
+  content: " ";
+  display: block;
+  /* border-bottom: 1px solid #ccc; */
+  /* border-top: 1px solid #ccc; */
+  height: 5px;
+  /* background-color: #f8f8f8; */
 }
 .submit:hover {
   background-color: #fd5e53;
@@ -421,6 +483,6 @@ nav li a:hover {
 }
 @media only screen and (min-width: 1290px) {
   #nav-container {
-      display: none;
+    display: none;
   }
 }

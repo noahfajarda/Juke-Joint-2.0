@@ -6,10 +6,10 @@
   text-align: center;
 }
 .content-section {
-  width:80%;
+  width: 80%;
 }
 .info-container {
-  width:100%;
+  width: 100%;
 }
 .title-container {
   width: 25%;
@@ -17,18 +17,76 @@
 
 #lyric-comment-container {
   display: flex;
-  width:90%;
+  width: 90%;
   margin-bottom: 5%;
 }
 #accordionExample {
-  width:50%;
-  margin-right:10px;
+  width: 50%;
+  margin-right: 10px;
 }
 #track-comment-section {
-  width:50%;
-  margin-left:10px;
+  width: 50%;
+  margin-left: 10px;
 }
 
+.accordion-item {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.accordion-item:last-of-type {
+  border-bottom-right-radius: var(--bs-accordion-border-radius);
+  border-bottom-left-radius: var(--bs-accordion-border-radius);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  background-color: var(--bs-accordion-active-bg);
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+    var(--bs-accordion-border-color);
+}
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+.accordion-button {
+  position: relative;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  width: 100%;
+  padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+  font-size: 1rem;
+  color: var(--bs-accordion-btn-color);
+  text-align: left;
+  background-color: #b0c4de;
+  border: 0;
+  border-radius: 0;
+  overflow-anchor: none;
+  transition: var(--bs-accordion-transition);
+}
+
+.accordion-button::after {
+  flex-shrink: 0;
+  width: var(--bs-accordion-btn-icon-width);
+  height: var(--bs-accordion-btn-icon-width);
+  justify-content: center;
+  position: relative;
+  content: "";
+  background-image: var(--bs-accordion-btn-icon);
+  background-repeat: no-repeat;
+  background-size: var(--bs-accordion-btn-icon-width);
+  transition: var(--bs-accordion-btn-icon-transition);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
 
 @media only screen and (max-width: 1290px) {
   .content-section {
@@ -48,7 +106,7 @@
   #lyric-comment-container {
     display: flex;
     flex-direction: column;
-    width:100%;
+    width: 100%;
     margin-bottom: 5%;
     align-items: center;
   }
@@ -60,20 +118,20 @@
   }
 }
 
-
 .heading-primary {
   color: rgba(253, 253, 253, 0.87);
   text-transform: uppercase;
 }
 
 .heading-primary-main {
-  text-decoration: underline rgb(40, 77, 199);
+  /* text-decoration: underline rgb(40, 77, 199); */
   display: block;
   font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
   animation-name: moveInleft;
   animation-duration: 2s;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .heading-primary-sub {
@@ -101,45 +159,45 @@
     transform: translate(0);
   }
 }
-  .heading-primary-sub {
-    margin-left: 20px;
-    margin-top: 30px;
-    display: block;
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: 20px;
-    animation-name: moveInRight;
-    animation-duration: 2s;
+.heading-primary-sub {
+  margin-left: 20px;
+  margin-top: 30px;
+  display: block;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  animation-name: moveInRight;
+  animation-duration: 2s;
+}
+
+@keyframes moveInleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
   }
 
-  @keyframes moveInleft {
-    0% {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    80% {
-      transform: translateX(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
+  80% {
+    transform: translateX(-10px);
   }
-  
-  @keyframes moveInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-  
-    80% {
-      transform: translateX(-10px);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .feedback-input {
@@ -151,7 +209,7 @@
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border: 2px solid #cc6666;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.859);
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
@@ -160,15 +218,32 @@
   outline: 0;
 }
 
+#comment-box::placeholder {
+  color: rgba(236, 216, 251, 0.807);
+  font-weight: normal;
+}
+
+#comment-box {
+  color: rgb(199, 178, 232);
+  font-weight: bold;
+}
+
 .feedback-input:focus {
   border: 2px solid #4977cc;
 }
 #lyrics-button {
-  cursor:none;
-  margin:0px;
+  cursor: none;
+  margin: 0px;
 }
+
+#lyrics {
+  background-color: rgba(152, 203, 231, 0.1);
+  overflow: auto;
+  max-height: 400px;
+}
+
 #track-name {
-  color:rgb(170, 179, 105)
+  color: rgb(170, 179, 105);
 }
 textarea {
   cursor: none;
@@ -193,6 +268,28 @@ textarea {
   margin-top: -4px;
   font-weight: 700;
 }
+
+#add-track-comment,
+#add-artist-comment,
+#add-album-comment {
+  background: radial-gradient(
+    circle at 10.6% 22.1%,
+    rgb(206, 18, 18) 0%,
+    rgb(122, 21, 21) 100.7%
+  );
+  letter-spacing: 0.1em;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+#add-track-comment:hover,
+#add-artist-comment:hover,
+#add-album-comment:hover {
+  background: linear-gradient(
+    319.6deg,
+    rgb(243, 0, 79) 20.5%,
+    rgb(255, 236, 68) 110.9%
+  );
+}
+
 [type="submit"]:hover {
   cursor: none;
   background: #3641dd;
@@ -219,9 +316,8 @@ textarea {
   background-position: -2800px 0;
 }
 .add-to-playlist {
-  background: url("../images/playlist-icon.png")
-  no-repeat center;
-  background-color: rgba(255, 0, 0, 0.317);
+  background: url("../images/playlist-icon.png") no-repeat center;
+  /* background-color: rgba(255, 0, 0, 0.317); */
   animation-name: added-playlist;
   animation-duration: 2s;
   height: 68px;
@@ -229,18 +325,24 @@ textarea {
   border-radius: 20px;
 }
 
-@keyframes added-playlist {
-  from {background-color: transparent;}
-  to {
-    background-color: rgba(255, 0, 0, 0.317);
+.add-to-playlist:hover {
+  background-color: #907190;
+}
 
+@keyframes added-playlist {
+  from {
+    background-color: transparent;
+  }
+  to {
+    /* background-color: rgba(255, 0, 0, 0.317); */
   }
 }
 
 @keyframes removed-playlist {
   from {
-    background-color: rgba(255, 0, 0, 0.317);
-  
+    /* background-color: rgba(255, 0, 0, 0.317); */
   }
-  to {background-color: transparent;}
+  to {
+    background-color: transparent;
+  }
 }
