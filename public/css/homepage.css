@@ -526,6 +526,7 @@ main {
 }
 .side-button.contact::before {
   content: "Contact Us";
+  font-weight: 500px;
 }
 .side-button.contact:after {
   background: url("../images/contact-icon.png") no-repeat center;
