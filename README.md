@@ -2,13 +2,13 @@
 
 ## Table of Contents
 
--   [Project description](#description)
--   [Installation](#installation)
--   [Usage](#usage)
--   [License](#license)
--   [Contribution](#contribution)
--   [Tests](#tests)
--   [Meet the team](#team)
+- [Project description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contribution](#contribution)
+- [Tests](#tests)
+- [Meet the team](#team)
 
 ## Description
 
@@ -48,13 +48,13 @@ Click [here](https://juke-joint.herokuapp.com/) to view our deployed application
 
 Click on each of our names to view our github profile.
 
--   [Noah Fajarda](https://github.com/noahfajarda)
--   [Amr Moubasher](https://github.com/amoubasher)
--   [Ranjit Saini](https://github.com/rjsaini88)
--   [Anas Qazza](https://github.com/aqazza)
+- [Noah Fajarda](https://github.com/noahfajarda)
+- [Amr Moubasher](https://github.com/amoubasher)
+- [Diana Nguyen](https://github.com/dianaanguyen)
+- [Anas Qazza](https://github.com/aqazza)
 
 ## Tests
 
 ## Additional Future Implementation Ideas
 
--   Adding background info on an artist and what they thought
+- Adding background info on an artist and what they thought

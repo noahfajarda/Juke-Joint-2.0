@@ -1,25 +1,35 @@
 {{>sidebar}}
-<div class="nine">
-  <h1>Juke <i class='fas fa-headphones-alt' aria-hidden="true"></i> Joint</h1>
-</div>
+<div class="nine">   <h1>Juke <i class='fas fa-headphones-alt' aria-hidden="true"></i> Joint</h1> </div>
+
 <div id="auto-complete-container">
     <input type="text" id="search" />
     <div id="choices"></div>
+</div>
+<div id="auto-complete-text">
+    Start Typing Your Favorite Artist & Let Our Autocomplete Bar Finish It Off For You!
 </div>
 <div id="user-Id-container" style="display:none">
     <h2>User Id:</h2>
     <h2 id="user-Id">{{userId}}</h2>
 </div>
-
 <script src="/js/search.js"></script>
 <link rel="stylesheet" href="/css/homepage.css">
 <style>
+    #auto-complete-text {
+        padding-bottom: 100px;
+        padding-left: 120px;
+        padding-right: 120px;
+        color: white;
+        font-size: 30px;
+        font-family: "Raleway", sans-serif;
+    }
     .twelve {
         height: 95px;
         padding-top: 0px;
     }
     #search {
         font-size: 69px;
+        font-family: "Raleway", sans-serif;
         height: 80px;
     }
     #choices {
@@ -38,9 +48,13 @@
         opacity: 0;
         animation: fadeUp 2s ease 0s 1 normal forwards;
     }
+    .auto-choice {
+        font-family: "Raleway", sans-serif;
+    }
     .auto-choice:hover {
         border-radius: 10px;
-        background-color: red;
+        background-color: white;
+        color: black;
     }
     @keyframes fadeUp {
         0% {
@@ -52,7 +66,4 @@
             opacity: 1;
         }
     }
-
-
-
 </style>

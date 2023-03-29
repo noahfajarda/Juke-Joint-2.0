@@ -309,7 +309,7 @@ main {
   top: -9px;
 }
 .card:nth-child(4):before {
-  background-image: url(https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/streams/2012/August/120813/401372-tdy-120810-tih-abbey-orig.jpg);
+  background-image: url(https://media.newyorker.com/photos/5da8c4dcbac906000809bd89/4:3/w_2507,h_1880,c_limit/Gould-AbbeyRoad01.jpg);
   background-position: center -15px;
   background-repeat: no-repeat;
 }
@@ -468,6 +468,7 @@ main {
   margin: 5px 0;
   background-color: transparent;
   cursor: none;
+  font-family: "Raleway";
 }
 .side-button:hover {
   background-color: #78b4b4;
